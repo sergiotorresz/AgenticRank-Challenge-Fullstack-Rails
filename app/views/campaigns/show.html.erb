@@ -1,0 +1,26 @@
+<%= link_to "&larr; All campaigns".html_safe, campaigns_path, class: "back-link" %>
+
+<h1><%= @campaign.name %></h1>
+<span class="pill pill-<%= @campaign.product.downcase %>"><%= @campaign.product %></span>
+
+<p class="description"><%= @campaign.description %></p>
+
+<%= render "campaigns/progress", campaign: @campaign %>
+
+<div class="return-figure">
+  <span>Projected return on a <%= format_money(Investment::MIN_AMOUNT) %> investment</span>
+  <strong><%= format_money(@campaign.projected_return(Investment::MIN_AMOUNT)) %></strong>
+  <span>over <%= @campaign.term_months %> months</span>
+</div>
+
+<section class="invest-section">
+  <h2>Invest in this campaign</h2>
+  <%= render "investments/form", campaign: @campaign, investment: @investment %>
+</section>
+
+<section class="recent-section">
+  <h2>Recent investors</h2>
+  <div id="recent_investments">
+    <%= render partial: "campaigns/investment", collection: @recent_investments, as: :investment %>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<div class="campaign-card">
+  <div class="campaign-card-header">
+    <h2><%= link_to campaign.name, campaign_path(campaign) %></h2>
+    <span class="pill pill-<%= campaign.product.downcase %>"><%= campaign.product %></span>
+  </div>
+
+  <%= render "campaigns/progress", campaign: campaign %>
+
+  <dl class="campaign-meta">
+    <div>
+      <dt>Rate</dt>
+      <dd><%= number_to_percentage(campaign.annual_rate_bps / 100.0, precision: 2) %> / yr</dd>
+    </div>
+    <div>
+      <dt>Term</dt>
+      <dd><%= campaign.term_months %> months</dd>
+    </div>
+    <div>
+      <dt>Status</dt>
+      <dd><%= campaign.status %></dd>
+    </div>
+  </dl>
+</div>

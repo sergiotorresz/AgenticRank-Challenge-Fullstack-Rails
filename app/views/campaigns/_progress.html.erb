@@ -1,0 +1,10 @@
+<div id="campaign_<%= campaign.id %>_progress" class="progress-block">
+  <div class="progress-bar">
+    <div class="progress-bar-fill" style="width: <%= campaign.progress_pct %>%"></div>
+  </div>
+  <div class="progress-figures">
+    <span><%= format_money(campaign.raised) %> raised</span>
+    <span>of <%= format_money(campaign.goal) %> goal</span>
+    <span class="progress-pct"><%= campaign.progress_pct %>%</span>
+  </div>
+</div>

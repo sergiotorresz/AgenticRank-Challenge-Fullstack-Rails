@@ -1,0 +1,19 @@
+torre:
+  name: Torre Reforma 180
+  description: A 22-story mixed-use tower in the heart of Reforma, Mexico City.
+  product: DEUDA
+  goal: 5000000
+  annual_rate_bps: 1400
+  term_months: 18
+  status: open
+  closes_on: <%= 60.days.from_now.to_date.iso8601 %>
+
+roma:
+  name: Distrito Roma Lofts
+  description: Boutique loft conversion in Roma Norte.
+  product: DEUDA
+  goal: 1000
+  annual_rate_bps: 1250
+  term_months: 12
+  status: open
+  closes_on: <%= 30.days.from_now.to_date.iso8601 %>

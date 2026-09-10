@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CapStack</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="/" class="brand">CapStack</a>
+        <span class="tagline">Real-estate crowdfunding</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <%= yield %>
+    </main>
+  </body>
+</html>

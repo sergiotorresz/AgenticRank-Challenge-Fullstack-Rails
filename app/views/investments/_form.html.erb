@@ -1,0 +1,20 @@
+<%= form_with model: [campaign, investment], data: { controller: "invest-form" } do |f| %>
+  <% if investment.errors.any? %>
+    <div class="error-messages">
+      <% investment.errors.full_messages.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :idempotency_key, value: SecureRandom.uuid %>
+
+  <div class="field">
+    <%= f.label :amount, "Amount (MXN)" %>
+    <%= f.number_field :amount, min: Investment::MIN_AMOUNT, step: 1, data: { invest_form_target: "amount" } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Invest", data: { invest_form_target: "submit" } %>
+  </div>
+<% end %>

@@ -1,0 +1,273 @@
+/*
+ *= require_self
+ */
+
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --border: #2a2e37;
+  --text: #e8eaed;
+  --muted: #9aa0ac;
+  --accent: #2ecf96;
+  --danger: #e5484d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+main.container {
+  padding-top: 32px;
+  padding-bottom: 64px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.campaign-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.campaign-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.campaign-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.campaign-card h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--border);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pill-deuda {
+  background: rgba(46, 207, 150, 0.15);
+  color: var(--accent);
+}
+
+.pill-copropiedad {
+  background: rgba(122, 162, 247, 0.15);
+  color: #7aa2f7;
+}
+
+.campaign-meta {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0 0;
+}
+
+.campaign-meta dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.campaign-meta dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+}
+
+.progress-block {
+  margin: 16px 0;
+}
+
+.progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+.progress-figures {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.progress-pct {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.description {
+  color: var(--muted);
+}
+
+.return-figure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 24px 0;
+}
+
+.return-figure strong {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.invest-section,
+.recent-section {
+  margin-top: 32px;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  max-width: 240px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent);
+  color: #06231a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+input[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error-messages {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  background: rgba(229, 72, 77, 0.1);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.error-messages p {
+  margin: 4px 0;
+}
+
+.investment-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.investment-row:last-child {
+  border-bottom: none;
+}
+
+.investor-name {
+  color: var(--text);
+}
+
+.investment-amount {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.investment-time {
+  color: var(--muted);
+}

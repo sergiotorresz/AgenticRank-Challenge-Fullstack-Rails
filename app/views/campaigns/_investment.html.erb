@@ -1,0 +1,5 @@
+<div class="investment-row">
+  <span class="investor-name"><%= investment.investor.name %></span>
+  <span class="investment-amount"><%= format_money(investment.amount) %></span>
+  <span class="investment-time"><%= time_ago_in_words(investment.created_at) %> ago</span>
+</div>

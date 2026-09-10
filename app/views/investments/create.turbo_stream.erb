@@ -1,0 +1,7 @@
+<%= turbo_stream.replace "progress" do %>
+  <%= render "campaigns/progress", campaign: @campaign %>
+<% end %>
+
+<%= turbo_stream.prepend "investments" do %>
+  <%= render "campaigns/investment", investment: @investment %>
+<% end %>

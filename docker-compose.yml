@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: capstack
+      POSTGRES_PASSWORD: capstack
+      POSTGRES_DB: capstack_development
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U capstack"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  web:
+    build: .
+    command: bash -c "bin/rails db:prepare db:seed && bin/rails server -b 0.0.0.0"
+    environment:
+      DATABASE_URL: postgres://capstack:capstack@postgres:5432/capstack_development
+      RAILS_ENV: development
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+
+volumes:
+  pgdata:

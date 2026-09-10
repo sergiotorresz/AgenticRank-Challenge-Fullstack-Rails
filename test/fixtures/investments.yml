@@ -1,0 +1,17 @@
+torre_ana:
+  campaign: torre
+  investor: ana
+  amount: 25000
+  idempotency_key: fixture-torre-ana
+
+torre_luis:
+  campaign: torre
+  investor: luis
+  amount: 15000
+  idempotency_key: fixture-torre-luis
+
+roma_ana:
+  campaign: roma
+  investor: ana
+  amount: 2000
+  idempotency_key: fixture-roma-ana
